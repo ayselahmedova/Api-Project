@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><img src="./img/logo.svg" alt=""></div>
+            <ul>
+                <li>БАНК</li>
+                <li>БИЗНЕС</li>
+                <li>ИНВЕСТИЦИИ</li>
+                <li>СТРАХОВАНИЕ</li>
+                <li>МОБАЙЛ</li>
+                <li>ПУТЕШЕСТВИЯ</li>
+                <li>РАЗВЛЕЧЕНИЯ</li>
+            </ul>
+            <button class="login">ВОЙТИ</button>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Конвертер валют онлайн</h1>
+            <div class="cards">
+                <div class="card">
+                    <p>У меня есть</p>
+                    <div class="btns">
+                        <div class="btn active">RUB</div>
+                        <div class="btn">USD</div>
+                        <div class="btn">EUR</div>
+                        <div class="btn">GBP</div>
+                    </div>
+                    <div class="amount">
+                        <input class="first" type="text"  value="0">
+                        <p class="show">1 RUB = 0.0135 USD</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <p>Хочу приобрести</p>
+                    <div class="change-btns">
+                        <div class="btn">RUB</div>
+                        <div class="btn active">USD</div>
+                        <div class="btn">EUR</div>
+                        <div class="btn">GBP</div>
+                    </div>
+                    <div class="amount">
+                        <input class="second" type="text" inputmode="numeric"  value="0">
+                        <p class="show2">1 RUB = 0.0135 USD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="./index.js"></script>
+</html>

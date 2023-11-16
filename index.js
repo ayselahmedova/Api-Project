@@ -14,7 +14,7 @@ let firstInput =document.querySelector(".first");
 let secondInput =document.querySelector(".second");
 let show = document.querySelector(".show");
 let show2 = document.querySelector(".show2");
-console.log(btns);
+// console.log(btns);
 btns.forEach((btn)=>{
     btn.addEventListener("click",(e)=>{
         btns.forEach((btn)=>{
@@ -54,7 +54,7 @@ function changeValyuta(amount){
     
     fetch(query).then(res => res.json()).then(data =>{
     
-    console.log(data);
+    
         if(data.result==undefined){
                secondInput.value='0';
        }

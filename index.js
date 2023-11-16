@@ -33,7 +33,7 @@ changeBtns.forEach((btn)=>{
         });
         e.target.classList.add ("active");
         changedMoney = e.target.innerHTML;
-        changeValyuta(secondInput.value.replace(/\s+/g, ''));
+        changeValyuta(firstInput.value.replace(/\s+/g, ''));
         changeShow()
     });
 });
@@ -43,7 +43,7 @@ firstInput.addEventListener('keyup',(e)=>{
     changeValyuta(e.target.value.replace(/\s+/g, ''));
 });
 secondInput.addEventListener('keyup',(e)=>{
-    changeValyuta(e.target.value.replace(/\s+/g, ''));
+    changeValyutaRev(e.target.value.replace(/\s+/g, ''));
 });
 
 function changeValyuta(amount){
@@ -62,6 +62,21 @@ function changeValyuta(amount){
             secondInput.value= parseFloat(data.result).toFixed(4);
        }});
 }
+function changeValyutaRev(amount){
+    const apiKey = '7802788bd3aa7bf0158b85ffdd18215b';
+    let query=`http://api.exchangerate.host/convert?from=${changedMoney}&to=${money}&amount=${amount}&access_key=${apiKey}`;
+    
+
+    
+    fetch(query).then(res => res.json()).then(data =>{
+   
+        if(data.result==undefined){
+               firstInput.value='0';
+       }
+       else{
+            firstInput.value= parseFloat(data.result).toFixed(4);
+       }});
+}
 function changeShow(){
     const apiKey = '7802788bd3aa7bf0158b85ffdd18215b';
     let query=`http://api.exchangerate.host/convert?from=${money}&to=${changedMoney}&amount=1&access_key=${apiKey}`;
@@ -70,7 +85,6 @@ function changeShow(){
     
     fetch(query).then(res => res.json()).then(data =>{
     
-    console.log(data);
         if(data.result==undefined){
             show.innerHTML='0';
             show2.innerHTML='0';
